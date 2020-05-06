@@ -7,13 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
 </head>
 <body>
     <div id="root">
         <h1>CSV To JSON Converter</h1>
-        <form action="POST" id="csvform">
+        <form id="csvform">
             <label for="csvinput">Select your csv file:</label>
-            <input type="file" class="button" id="csvinput" name="csvinput" accept=".csv"><br>
+            <input type="file" class="button" id="csvinput" name="csvinput" accept=".csv">
             <input type="submit" id="submit" value="Submit" class="button">
         </form>
     </div>
