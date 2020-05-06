@@ -1,3 +1,6 @@
+const resultArea = document.getElementById('result-area');
+const resultTextArea = document.getElementById('result');
+
 function readFile(file) {
   return new Promise(resolve => {
     const reader = new FileReader();
@@ -19,6 +22,12 @@ function getJsonFromCSVString(string) {
   });
 }
 
+function displayResult(text) {
+  resultTextArea.textContent = text;
+  resultArea.classList.remove('no-display');
+  resultTextArea.style.height = resultTextArea.scrollHeight + 'px';
+}
+
 async function csvSubmit(e) {
   e.preventDefault();
   const { files } = e.target.elements['csvinput'];
@@ -27,7 +36,9 @@ async function csvSubmit(e) {
   }
   const [ file ] = files;
   const fileString = await readFile(file);
-  console.log(await getJsonFromCSVString(fileString));
+  const jsonResult = await getJsonFromCSVString(fileString);
+  const formattedResult = JSON.stringify(jsonResult, null, '\t');
+  displayResult(formattedResult);
 }
 
 document.getElementById('csvform').addEventListener('submit', csvSubmit, false);

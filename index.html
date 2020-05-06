@@ -5,8 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>CSV to JSON Convertor</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
     <script defer src="index.js"></script>
 </head>
 <body>
@@ -17,6 +18,13 @@
             <input type="file" class="button" id="csvinput" name="csvinput" accept=".csv">
             <input type="submit" id="submit" value="Submit" class="button">
         </form>
+        <div id="result-area" class="no-display">
+            <div id="btn-container">
+                <button class="result-button"><i class="far fa-copy"></i></button>
+                <button class="result-button"><i class="fas fa-file-download"></i></button>
+            </div>
+            <textarea name="result" id="result"></textarea>
+        </div>
     </div>
 </body>
 </html>

@@ -1,9 +1,19 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
     width: 100vw;
     background-color: #2980b9;
+}
+
+#result-area.no-display {
+    display: none;
+}
+
+#result-area, #csvform {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
 }
 
 #root {
@@ -14,11 +24,18 @@ body {
 }
 
 #csvform {
-    display: flex;
-    flex-direction: column;
     font-size: 2rem;
-    justify-content: start;
-    align-items: center;
+}
+
+#result-area {
+    margin: 20px auto;
+    width: 50%;
+}
+
+#result {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid black;
 }
 
 .button {
@@ -29,4 +46,12 @@ body {
     margin-top: 20px;
     background-color: #45a1de;
     color: white;
+}
+
+#btn-container {
+    width: 100%;
+    text-align: right;
+}
+.result-button {
+    font-size: 1rem;
 }
