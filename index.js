@@ -16,8 +16,8 @@ async function csvSubmit(e) {
     return;
   }
   const [ file ] = files;
-
-  console.log(await readFile(file));
+  const fileString = await readFile(file);
+  console.log(fileString);
 }
 
 document.getElementById('csvform').addEventListener('submit', csvSubmit, false);
