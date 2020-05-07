@@ -53,5 +53,33 @@ body {
     text-align: right;
 }
 .result-button {
+    position: relative;
     font-size: 1rem;
+}
+
+.result-button:hover.result-button::before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    left: calc(50% - 5px);
+    top: -50%;
+    border: 5px solid transparent;
+    border-top: 5px solid #363636;
+}
+
+.result-button:hover.result-button::after {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(-50% - 29px);
+    background-color: #363636;
+    color: #eee;
+    width: max-content;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.result-button:hover#copy-result::after {
+    content: 'Copy to Clipboard';
 }
