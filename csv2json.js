@@ -4,7 +4,7 @@ function processRowToArray(row) {
   const result = [];
   for (const token of tokens) {
     if (isSemiColon) {
-      result.push(result.pop()+token);
+      result.push(result.pop()+','+token);
     } else {
       result.push(token);
     }
@@ -14,7 +14,7 @@ function processRowToArray(row) {
     }
   }
 
-  return result;
+  return result.map(item => item.replace(/"/g, ''));
 }
 
 function buildJSON(headers, rows) {
