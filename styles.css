@@ -70,6 +70,7 @@ body {
 
 .result-button:hover.result-button::after {
     position: absolute;
+    content: attr(data-tooltip);
     left: 50%;
     transform: translateX(-50%);
     top: calc(-50% - 29px);
@@ -78,12 +79,4 @@ body {
     width: max-content;
     padding: 5px;
     border-radius: 5px;
-}
-
-.result-button:hover#copy-result::after {
-    content: 'Copy to Clipboard';
-}
-
-.result-button:hover#download-result::after {
-    content: 'Download';
 }
