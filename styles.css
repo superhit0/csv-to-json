@@ -83,3 +83,7 @@ body {
 .result-button:hover#copy-result::after {
     content: 'Copy to Clipboard';
 }
+
+.result-button:hover#download-result::after {
+    content: 'Download';
+}
