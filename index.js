@@ -41,4 +41,12 @@ async function csvSubmit(e) {
   displayResult(formattedResult);
 }
 
+function copyResult() {
+  resultTextArea.select();
+  resultTextArea.setSelectionRange(0, resultTextArea.textContent.length);
+  document.execCommand('copy');
+  resultTextArea.blur();
+}
+
 document.getElementById('csvform').addEventListener('submit', csvSubmit, false);
+document.getElementById('copy-result').addEventListener('click', copyResult);
